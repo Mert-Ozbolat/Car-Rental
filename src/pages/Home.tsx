@@ -1,8 +1,8 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 
 const Home: FC = () => {
     return (
-        <div>Home</div>
+        <div className='text-4xl'>Home</div>
     )
 }
 
