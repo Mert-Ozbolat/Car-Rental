@@ -1,8 +1,13 @@
 import { FC } from 'react'
+import Hero from '../components/hero'
+import Filter from '../components/filter'
 
 const Home: FC = () => {
     return (
-        <div className='text-4xl'>Home</div>
+        <div>
+            <Hero />
+            <Filter />
+        </div>
     )
 }
 
