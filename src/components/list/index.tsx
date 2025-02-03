@@ -1,7 +1,6 @@
 import { FC, useEffect, useState } from 'react'
 import { ICar } from '../../types'
 import { fetchCars } from '../../utils/service'
-import { div } from 'motion/react-client'
 import Warning from './warning'
 
 
