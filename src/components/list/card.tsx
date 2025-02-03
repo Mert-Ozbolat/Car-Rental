@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import { ICar } from '../../types'
 import calcPrice from '../../utils/calcPrice'
 import Info from './info'
+import { motion } from 'motion/react';
 
 type Props = {
     car: ICar
@@ -10,7 +11,10 @@ type Props = {
 
 const Card: FC<Props> = ({ car }) => {
     return (
-        <div className='car-card'>
+        <motion.div
+            initial={{ scale: 0.5, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            className='car-card'>
             <h2>{car.make} {car.model}</h2>
 
             <div className='flex mt-6 text-[19]'>
@@ -25,7 +29,7 @@ const Card: FC<Props> = ({ car }) => {
 
             <Info car={car} />
 
-        </div>
+        </motion.div>
     )
 }
 
