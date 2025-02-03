@@ -1,45 +1,61 @@
-import { FC } from 'react'
-import { ICar } from '../../types'
-import calcPrice from '../../utils/calcPrice'
-import Info from './info'
-import { motion } from 'motion/react';
-import generateImage from './../../utils/generateImage';
-import Button from '../button';
+import { FC, useState } from "react";
+import { ICar } from "../../types";
+import calcPrice from "../../utils/calcPrice";
+import Info from "./info";
+import { motion } from "motion/react";
+import generateImage from "../../utils/generateImage";
+import Button from "../button";
+import Modal from "../modal";
 
 type Props = {
-    car: ICar
-}
-
+    car: ICar;
+};
 
 const Card: FC<Props> = ({ car }) => {
+    const [isOpen, setIsOpen] = useState<boolean>(false);
     return (
         <motion.div
             initial={{ scale: 0.5, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
-            className='car-card group'>
-            <h2>{car.make} {car.model}</h2>
+            className="car-card"
+        >
+            <h2>
+                {car.make} {car.model}
+            </h2>
 
-            <div className='flex mt-6 text-[19]'>
-                <span className='font-semibold'>$</span>
-                <span className='text-[32px]'>{calcPrice(car)}</span>
-                <span className='font-semibold self-end'>/day</span>
+            <div className="flex mt-6 text-[19]">
+                <span className="font-semibold">$</span>
+                <span className="text-[32px]">{calcPrice(car)}</span>
+                <span className="font-semibold self-end">/day</span>
             </div>
 
-            <div className='w-full'>
-                <img src={generateImage(car)} alt="" className='w-full h-full object-contain' />
+            <div className="w-full">
+                <img
+                    src={generateImage(car)}
+                    alt={car.model}
+                    className="w-full h-full object-contain"
+                />
             </div>
 
-            <motion.div initial={{ scale: 0.5 }} whileInView={{ scale: 1 }} className='w-full'>
-                <div className='hidden group-hover:block'>
+            <div className="w-full">
+                <div className="group-hover:hidden">
                     <Info car={car} />
                 </div>
-                <div className='hidden group-hover:block'>
-                    <Button text='More' designs='w-full text-white' />
-                </div>
-            </motion.div>
+                <motion.div
+                    initial={{ scale: 0.5 }}
+                    whileInView={{ scale: 1 }}
+                    className="hidden group-hover:block"
+                >
+                    <Button
+                        text="More"
+                        designs="w-full text-white"
+                        handleClick={() => setIsOpen(true)}
+                    />
+                </motion.div>
+            </div>
+            <Modal car={car} isOpen={isOpen} close={() => setIsOpen(false)} />
+        </motion.div>
+    );
+};
 
-        </motion.div >
-    )
-}
-
-export default Card
+export default Card;
