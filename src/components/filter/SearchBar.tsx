@@ -9,8 +9,7 @@ const SearchBar: FC = () => {
     const [params, setParams] = useSearchParams();
 
     const options = useMemo(
-        () => makes.map((make) => ({ value: make, label: make })),
-        []
+        () => makes.map((make) => ({ value: make, label: make })), []
     );
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {

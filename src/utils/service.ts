@@ -23,11 +23,10 @@ export const fetchCars = async ({
         "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/all-vehicles-model/records"
     );
 
-    const limit = 10;
+    const limit = 12;
 
     url.searchParams.append("limit", String(limit));
     url.searchParams.append("offset", String((Number(page) - 1) * limit));
-
     url.searchParams.append("refine", `make:${make}`);
 
     if (model) {
