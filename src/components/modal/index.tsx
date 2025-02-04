@@ -45,4 +45,4 @@ const Modal: FC<Props> = ({ isOpen, car, close }) => {
     );
 };
 
-export default Modal; 1
+export default Modal;

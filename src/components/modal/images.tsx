@@ -5,6 +5,7 @@ import generateImage from "../../utils/generateImage";
 type Props = {
     car: ICar;
 };
+
 const Images: FC<Props> = ({ car }) => {
     return (
         <div className="flex-1 flex-col gap-3">
@@ -14,6 +15,7 @@ const Images: FC<Props> = ({ car }) => {
                     className="h-full mx-auto object-cover rounded-md"
                 />
             </div>
+
             <div className="flex gap-3 my-3">
                 <div className="rounded flex-1 flex relative h-24 bg-primary-blue-100">
                     <img
