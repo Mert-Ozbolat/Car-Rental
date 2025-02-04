@@ -11,6 +11,7 @@ const List: FC = () => {
 
     const [cars, setCars] = useState<ICar[] | null>(null)
     const [error, setError] = useState<string | null>(null)
+    const [params, setParams] = useState<string | null>(null)
 
 
     useEffect(() => {
