@@ -9,4 +9,4 @@
 - Tailwind CSS – Fast and customizable styling
 
 ## **Preview**
-![](gif.gif)
+![](./public/gif.gif)
