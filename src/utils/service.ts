@@ -14,7 +14,7 @@ type Filter = {
 
 // Asenkron fonksiyonların return tipinde doğrudan fonksiyonun return etitiği veriyi yazdığımız hata alırız. Fonksiyonların hata döndrüdem ihtimalinde göze alarak ts'in içerisinde nulunan Promise tipine kendi tipimizi generic olarak göndermeliyiz
 export const fetchCars = async ({
-    make = "Mercedes-Benz",
+    make = "Lamborghini",
     model,
     year,
     page = "1",

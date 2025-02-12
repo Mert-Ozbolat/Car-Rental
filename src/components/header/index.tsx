@@ -6,7 +6,7 @@ const Header: FC = () => {
     return <header className="w-full z-10">
         <div className="max-width flex justify-between items-center px-6 py-4">
             <Link to="/">
-                <img src="logo.png" className="w-[70px]" />
+                <img src="logo.webp" className="w-[70px]" />
             </Link>
             <Button text="Register" designs="min-w-[130px]" />
         </div>
